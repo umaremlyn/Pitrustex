@@ -33,10 +33,10 @@
 <!-- body -->
 
 <body class="main-layout">
-    <!-- loader  -->
+    <!-- loader  
     <div class="loader_bg">
         <div class="loader"><img src="images/loading.gif" alt="" /></div>
-    </div>
+    </div>-->
     <!-- end loader -->
     <div id="mySidepanel" class="sidepanel">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
@@ -62,42 +62,45 @@
         </div>
     </header>
     <!-- end header -->
+  <div class="currency-form">
 
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">EXCHANGE COINS</a>
+  <li class="nav-item, center">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">BUY TOKENS</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">ORDER HISTORY</a>
+  <li class="nav-item, center">
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">SELL TOKENS</a>
   </li>
 
 </ul>
-<div class="tab-content" id="pills-tabContent">
+<div class="tab-content, left" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 
-  <div class="col-lg-12" style="">
+  <div class="col-lg-12" style="text-align:center;">
 
-    <div class="col-lg-6" style="">
+    <div class="col-lg-7" style="">
 
     <div class="row">
 
         <div class="col-lg-5">
 
-            <form>
+          <form>
             <div class="form-group">
             <label for="exampleInputEmail1">Exchange:</label>
-            <select name="send-currency" class="input-sm" style="width:100%;height:2.5em;">
+                <div class="input-group-prepend"><div class="input-group-text">Pi Token  </div></div> 
+<!--            <select name="send-currency" class="input-sm" style="width:100%;height:2.5em;">
                 <option value="1" rel="send-btc">Pi Token</option>
-            </select>
+                <option value="2" rel="send-btc">Other Tokens Coming Soon</option>
+            </select>-->
             </div>
 
             <div class="form-group">
             <label for="exampleInputPassword1">Enter Amount:</label>
             <div class="input-group mb-2 mr-sm-2">
-                <div class="input-group-prepend"><div class="input-group-text">Pi</div></div> 
-                <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Currency">
+<!--                <div class="input-group-prepend"><div class="input-group-text">Pi</div></div> -->
+                <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Token Amount">
             </div>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="$">
+<!--            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="$">-->
             </div>
   
         </div>
@@ -119,10 +122,10 @@
             <div class="form-group">
             <label for="exampleInputPassword1">Enter Amount:</label>
             <div class="input-group mb-2 mr-sm-2">
-                <div class="input-group-prepend"><div class="input-group-text">Pi</div></div>         
+<!--                <div class="input-group-prepend"><div class="input-group-text">Pi</div></div>         -->
                 <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Currency">
             </div>
-            <input type="currency" class="form-control" id="exampleFormControlInput1" placeholder="$">
+<!--            <input type="currency" class="form-control" id="exampleFormControlInput1" placeholder="$">-->
             </form>
         </div>
             
@@ -146,6 +149,7 @@
 
 
 </div>
+</div>
 
 
 </div> <!-- col-6 ending div -->
@@ -167,22 +171,22 @@
                 <td style="word-spacing:30px;">Complete
                     <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exchange-history-modal" id="viewdetails">View-Details</button>
                 </td>
-                <td>0.23748452 BTC</td>
-                <td>0.2766455 DASH</td>
+                <td>30000.23748452 Pi</td>
+                <td>780.2766455 USD</td>
             </tr>
 
             <tr>
             <th scope="row">Sept 13</th>
                 <td style="word-spacing:30px;">Complete <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exchange-history-modal" id="viewdetails">View Details</button></td>
-                <td>0.23748452 BTC</td>
-                <td>0.2766455 DASH</td>
+                <td>2000.23748452 Pi</td>
+                <td>50.2766455 USDT</td>
             </tr>
 
             <tr>
             <th scope="row">Sept 17</th>
-                <td style="word-spacing:30px;">Complete <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exchange-history-modal" id="viewdetails";">View-Details</button></td>
-                <td>0.23748452 BTC</td>
-                <td>0.2766455 DASH</td>
+                <td style="word-spacing:30px;">Complete <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exchange-history-modal" id="viewdetails">View-Details</button></td>
+                <td>470.23748452 Pi</td>
+                <td>170,000.2766455 NGN</td>
             </tr>
 
         </tbody>
@@ -206,7 +210,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Success! Your Exchange is Complete! </h5>
+        <h5 class="modal-title" id="exampleModalCenterTitle">Success! Your Transaction is Complete! </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -275,7 +279,7 @@
 
                 <br>
 
-              <p class="exchange-text"> Your exchange is complete. It may take a few minutes for the funds to show in your balance. </p>
+              <p class="exchange-text"> Your Transaction is complete. It may take a few minutes for the funds to show in your Account. </p>
 
 
               <div class="modal-section-title"> ORDER SUMMARY </div>
@@ -292,7 +296,7 @@
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Mark</td>
+      <td>Mansoor Urd</td>
       <td>Otto</td>
       <td>@mdo</td>
     </tr>
@@ -304,8 +308,8 @@
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
+      <td>Bello</td>
+      <td>Adamu</td>
       <td>@twitter</td>
     </tr>
   </tbody>

@@ -454,7 +454,28 @@ ul.email li i {
      margin-bottom: 3px;
      font-size: 14px;
 } */
+.nav-item{
+     color: #999;
+     margin-top: 15px;
+     margin-bottom: 3px;
+     font-size: 14px;
+}
+.center {
+     margin: auto;
+     width: 50%;
+     padding: 10px;
+}
+.currency-form{
+     width: 520px;
+     padding: 50px;
+     border: 1px solid gray;
 
+     background: rgb(160, 145, 145);
+     margin: 50px auto;
+     border-radius: 3px;
+     align-items: center;
+     height: 500px;
+}
 .lead-form{
      width: 350px;
      background: rgb(53, 26, 26);
