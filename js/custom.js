@@ -108,3 +108,41 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidepanel").style.width = "0";
 }
+
+/* Dashboard
+     -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+	 const form = document.querySelector('form');
+	 form.addEventListener('submit', calculatePrice);
+	 
+	 function calculatePrice(event) {
+	   event.preventDefault();
+	 
+	   const tokenAmount = document.querySelector('#tokenAmount').value;
+	   const currency = document.querySelector('#currency').value;
+	   const action = document.querySelector('input[name="action"]:checked').value;
+	 
+	   let price;
+	   if (currency === 'ngn') {
+		 price = tokenAmount * 360;
+	   } else if (currency === 'usdt') {
+		 price = tokenAmount * 1.5;
+	   } else {
+		 price = tokenAmount * 0.0026;
+	   }
+	 
+	   // Display the price calculation
+	   const priceDisplay = document.querySelector('#priceDisplay');
+	   priceDisplay.innerHTML = `The price is ${price} ${currency}.`;
+	 
+	   // Show the company account number or wallet address
+	   if (action === 'buy') {
+		 const accountNumber = document.querySelector('#accountNumber');
+		 accountNumber.innerHTML = 'Company account number: 123456'
+		 'Company account Name: Pinetex'
+		 'Company Bank Name: KUDA BANK';		 
+	   } else {
+		 const walletAddress = document.querySelector('#walletAddress');
+		 walletAddress.innerHTML = 'Wallet address: 0xabcdefasdfghjklkjhgfds0x00fx0xc10fgkh';
+	   }
+	 }
+	 

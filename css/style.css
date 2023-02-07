@@ -460,6 +460,22 @@ ul.email li i {
      margin-bottom: 3px;
      font-size: 14px;
 }
+#dashboard {
+     width: 500px;
+     margin: 0 auto;
+     text-align: center;
+}
+   
+#token-form {
+     display: inline-block;
+     text-align: left;
+}
+   
+#price-output {
+     display: inline-block;
+     margin-left: 20px;
+}
+   
 .center {
      margin: auto;
      width: 50%;
