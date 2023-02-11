@@ -49,11 +49,16 @@
                 <div class="row d_flex">
                     <div class="col-sm-3">
                         <div class="logo">
-                            <a href="index.html"><!--<img src="images/logo.png" alt="" />-->Pinex</a>
+                            <a href="index.html"><img src="images/logo.png" alt="" /></a>
                         </div>
                     </div>
                     <div class="col-sm-5">
                         <ul class="social_icon text_align_right d_none">
+                            <li> <a href="Javascript:void(0)"><i class="fa fa-facebook-f"></i></a></li>
+                            <li> <a href="Javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
+                            <li> <a href="Javascript:void(0)"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            <li> <a href="Javascript:void(0)"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li> <a href="Javascript:void(0)"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
                     <div class="col-sm-4">
@@ -69,92 +74,36 @@
     </header>
     <!-- end header -->
 <br>
-<br>
-                    <div class="col-sm-6">
-                        <ul class="social_icon text_align_center d_none">
-                        <p>
-                        <h3>Disclaimer:</h3>
-                        We are not an official Pi Network Exchanger, we are not in anyway related to the Pi Network Company</p>
-                        </ul>
-                    </div>
-<br>
-<br>
-<br>
-<br>
-<div class="login-wrap">
-	<div class="login-html">
-		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">BUY</label>
-		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">SELL</label>
-        <form class="login-form" action="confirmation.html" id="confirmForm" value="buy">
-			<div class="sign-in-htm">
-				<div class="group">
-                    <label for="amount" class="label">Amount of Pi Coin to Buy:</label>
-                    <input type="text" id="amount" class="input" oninput="calculateTotal()">
-				</div>
-				<div class="group">
-                <label for="currency" class="label">Select Currency:</label>
-                <select id="currency" class="input" oninput="calculateTotal()">
-                    <option value="usd">USD</option>
-                    <option value="naira">Naira</option>
-                    <option value="ustd">USTD</option>
-                </select>
-                <label for="total" class="label">Total:</label>
-                <input type="text" id="total" class="input" readonly>
+    <div class="login-wrap">
+  	<div class="login-html">
+      <div id="purchaseDetails">
+        <h2 style="center">Here are your Purchase Details</h2>
+        <p id="amount"></p>
+        <p id="totalBuy"></p>
+        <p id="walletAddres"></p>
+      </div>
 
-				<div class="group">
-                    <label for="amount" class="label">Input Your Pi Wallet Address:</label>                    
-                    <input type="text" id="userAddress" class="input" name="walletAddress">
-                </div>
-
-				</div>
-				<div class="group">
-                    <button id="clickBuy" type="submit" onclick="submitBuy()" class="button" value="BUY">
-                    BUY
-                    </button>
-				</div>
-				<div class="hr"></div>
-			</div>
-
-			<div class="sign-up-htm" value="sell">
-				<div class="group">
-                    <label for="amount" class="label">Amount of Pi Coin to Sell:</label>
-                    <input type="text" id="sellamount" class="input" oninput="calculateTotalSell()">
-
-				</div>
-				<div class="group">
-                <label for="currency" class="label">Select Currency:</label>
-                <select id="sellcurrency" class="input" oninput="calculateTotalSell()">
-                    <option value="naira">Naira</option>
-                    <option value="ustd">USTD</option>
-                </select>
-                <label for="total" class="label">Total:</label>
-                <input type="text" id="totalSell" class="input" readonly>
-
-				<div class="group">
-                    <label for="amount" class="label">Input Your Payment Details:</label>                    
-                    <input type="text" id="userAddress" class="input" name="walletAddress">
-                </div>
-
-				</div>
-				<div class="group">
-					<input type="submit" class="button" value="SELL">
-				</div>
-				<div class="hr"></div>
-				</div>
-			</div>
-		</form>
-        </div>
-	</div>
-</div>
-
-
+            <br>
+      <div id="bankDetails">
+        <h2>Please pay to the below Company Bank Details</h2>
+        <p>Bank Name: XYZ Bank</p>
+        <p>Account Number: 1234567890</p>
+        <p>Account Name: Pirex Limited</p>
+      </div>
+            <br>
+        <p>If you have successfully paid, kindly press the button below and wait for confirmation... <br> 
+        </p>
+      <div id="orderPaid">
+        <button id="submitButton">Confirm Payment</button>
+      </div>
+    </div>
+    </div>
     <!-- footer -->
     <footer>
         <div class="footer">
             <div class=" ">
                 <div class="row">
-                   
-            <div class="copyright text_align_center ">
+                <div class="copyright text_align_center ">
                <div class=" ">
                   <div class="row ">
                      <div class="col-md-12 ">
@@ -165,9 +114,54 @@
             </div>
          </div>
       </div>
+      </div>
     </footer>
       <!-- end footer -->
       <!-- Javascript files-->
+        <script> 
+                // Get the information of the user's purchase
+        let purchaseAmount = localStorage.getItem("Buyamount");
+        let totalBuy = localStorage.getItem("totalBuy");
+        let walletAddress = localStorage.getItem("walletAddres");
+
+        // Display the purchase details
+        document.getElementById("amount").innerHTML = "Pi Amount: " + purchaseAmount;
+        document.getElementById("totalBuy").innerHTML = "Total Price: " + totalBuy;
+        document.getElementById("walletAddres").innerHTML = "Your Recieving Pi Wallet: " + walletAddress;
+
+        // Get the submit button
+        let submitButton = document.getElementById("clickBuy");
+
+        // Add an event listener to the submit button
+        submitButton.addEventListener("clickBuy", function() {
+          // Get the user's details
+          //let walletAddress = document.getElementById("walletInput").value;
+
+          // Store the user's details
+          //localStorage.setItem("walletAddress", walletAddress);
+
+          // Redirect the user to the confirmation page
+          window.location.href = "confirmation.html";
+        });
+          const submit = document.getElementById("submitButton");
+  submit.addEventListener("submitButton", function(event) {
+    event.preventDefault();
+
+    const walletAddress = form.elements.walletAddress.value;
+    const transactionType = form.elements.transactionType.value;
+
+    let companyDetails;
+    if (transactionType === "buy") {
+      companyDetails = "Thank You for your Patronage \n\n Please wait as we confirm your payment \n Your Pi Coin will arrive shortly... \n If you encounter any issues please contact our support";
+    } else if (transactionType === "sell") {
+      companyDetails = "Company Wallet Address: \n\n 0x1234567890abcdef";
+    }
+
+    alert(`Wallet Address: ${walletAddress} \n\n Transaction Type: ${transactionType} \n\n ${companyDetails}`);
+  });
+
+        </script>
+
       <script src="js/jquery.min.js "></script>
       <script src="js/bootstrap.bundle.min.js "></script>
       <script src="js/jquery-3.0.0.min.js "></script>

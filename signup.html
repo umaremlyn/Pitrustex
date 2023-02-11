@@ -26,7 +26,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
 <!-- body -->
-
 <body class="main-layout">
     <!-- loader  -->
     <div class="loader_bg">
@@ -49,16 +48,12 @@
                 <div class="row d_flex">
                     <div class="col-sm-3">
                         <div class="logo">
-                            <a href="index.html"><img src="images/logo.png" alt="" /></a>
+                            <a href="index.html"><!--<img src="images/logo.png" alt="" />-->Pinex</a>
                         </div>
                     </div>
                     <div class="col-sm-5">
                         <ul class="social_icon text_align_right d_none">
-                            <li> <a href="Javascript:void(0)"><i class="fa fa-facebook-f"></i></a></li>
-                            <li> <a href="Javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
-                            <li> <a href="Javascript:void(0)"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                            <li> <a href="Javascript:void(0)"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li> <a href="Javascript:void(0)"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+
                         </ul>
                     </div>
                     <div class="col-sm-4">
@@ -77,66 +72,43 @@
     <!-- end header -->
 <br>
     <!-- Signup Form -->
-<div class="login-wrap">
-	<div class="login-html">
-		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
-		<div class="login-form">
-			<div class="sign-in-htm">
-				<div class="group">
-					<label for="pass" class="label">Email Address</label>
-					<input id="pass" type="text" class="input">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
-				</div>
-				<div class="group">
-					<input id="check" type="checkbox" class="check" checked>
-					<label for="check"><span class="icon"></span> Keep me Signed in</label>
-				</div>
-				<div class="group">
-					<input type="submit" class="button" value="Sign In">
-				</div>
-				<div class="hr"></div>
-				<div class="foot-lnk">
-					<a href="#forgot">Forgot Password?</a>
-				</div>
+<div class="container right-panel-active">
+	<!-- Sign Up -->
+	<div class="container__form container--signup">
+		<form action="dashboard.html" method="post" class="form" id="form1">
+			<h2 class="form__title">Sign Up</h2>
+			<input type="text" placeholder="Full Name" class="input" />
+			<input type="email" placeholder="Email" class="input" />
+			<input type="password" placeholder="Password" class="input" />
+			<input type="password" placeholder="Repeat Password" class="input" />
+			<button type="submit" href="dashboard.html" onclick="submit()" class="btn">Sign Up</button>
+		</form>
+	</div>
+	<!-- Sign In -->
+	<div class="container__form container--signin">
+		<form action="dashboard.html" class="form" id="form2">
+			<h2 class="form__title">Sign In</h2>
+			<input type="email" placeholder="Email" class="input" />
+			<input type="password" placeholder="Password" class="input" />
+			<a href="#" class="link">Forgot your password?</a>
+			<button type="submit" href="dashboard.html" onclick="submit()" class="btn">Sign In</button>
+		</form>
+	</div>
+	<!-- Overlay -->
+	<div class="container__overlay">
+		<div class="overlay">
+			<div class="overlay__panel overlay--left">
+            <p>Already have an Account?</p>
+				<button class="btn" id="signIn">Sign In</button>
 			</div>
-			<div class="sign-up-htm">
-				<div class="group">
-					<label for="user" class="label">Full Name</label>
-					<input id="user" type="text" class="input">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Email Address</label>
-					<input id="pass" type="text" class="input">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Repeat Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
-				</div>
-                    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-				<div class="group">
-					<input type="submit" class="button" value="Sign Up">
-				</div>
-				<div class="hr"></div>
-				<div class="foot-lnk">
-					<label for="tab-1">Already Member?</a>
-				</div>
+			<div class="overlay__panel overlay--right">
+            <p>Don't have an Account?</p>
+				<button class="btn" id="signUp">Sign Up</button>
 			</div>
 		</div>
 	</div>
 </div>
-
-
     <!-- end Signup Form -->
-
-
     <!-- wallet 
     <div class="wallet">
         <div class="container-fluid">
@@ -158,7 +130,7 @@
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
                         <i><img src="images/wa2.svg" alt="#"/></i>
-                        <h3>SEND COINS</h3>
+                        <h3>SEND AND RECIEVE PI COINS</h3>
                         <p>It is a long established fact that a reader will be distracted by </p>
                     </div>
                 </div>
@@ -178,24 +150,23 @@
                 </div>
             </div>
         </div>
-    </div>  -->
+    </div>-->
     <!-- end wallet -->
     <!-- footer -->
     <footer>
         <div class="footer">
-            <div class="container">
+            <div class=" ">
                 <div class="row">
                     <div class="col-md-3">
                         <div class="logo">
-                        <a class="logo_bottom" href="index.html"><img src="images/logo.png" alt="" /></a>
+                        <a class="logo_bottom" href="index.html"><!--<img src="images/logo.png" alt="" />-->Pinex</a>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6" ">
                   <div class="Informa conta ">
                      <h3>Contact Us</h3>
                      <ul>
-                        <li> <a href="Javascript:void(0) "> <i class="fa fa-map-marker " aria-hidden="true "></i> Penang Malaysia
-                           </a>
+                        <li> <a href="Javascript:void(0) ">
                         </li>
                         <li> <a href="Javascript:void(0) "><i class="fa fa-phone " aria-hidden="true "></i> Call +01 1234567890
                            </a>
@@ -204,21 +175,8 @@
                            </a>
                         </li>
                      </ul>
-                     <!--<ul>
-                        <li>Readable content of                              
-                        </li>
-                        <li>a page when looking                           
-                        </li>
-                        <li>at its layoutreadable                          
-                        </li>
-                        <li>content of a page                             
-                        </li>
-                        <li>when looking at its                         
-                        </li>
-                        <li>layout                          
-                        </li>
-                     </ul>-->
                   </div>
+
                </div>
                <div class="col-md-3 col-sm-6 "">
                         <div class="Informa helpful">
@@ -235,7 +193,6 @@
                             </ul>
                         </div>
                     </div>
-
                <div class="col-md-3 col-sm-6 ">
                   <div class="Informa ">
                      <h3>Newsletter</h3>
@@ -247,7 +204,7 @@
                </div>
             </div>
             <div class="copyright text_align_center ">
-               <div class="container ">
+               <div class=" ">
                   <div class="row ">
                      <div class="col-md-12 ">
                         <p>© <a href="https://Leecotech.com/ "> Pitrustex</a> 2023</p>

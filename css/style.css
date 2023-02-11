@@ -28,7 +28,6 @@ body {
      line-height: 1.80857;
      font-weight: normal;
      background: url(../images/body_bg.jpg);
-     background-size: 100% 100%;
      background-position: center;
      background-repeat: no-repeat;
 }
@@ -460,22 +459,7 @@ ul.email li i {
      margin-bottom: 3px;
      font-size: 14px;
 }
-#dashboard {
-     width: 500px;
-     margin: 0 auto;
-     text-align: center;
-}
-   
-#token-form {
-     display: inline-block;
-     text-align: left;
-}
-   
-#price-output {
-     display: inline-block;
-     margin-left: 20px;
-}
-   
+
 .center {
      margin: auto;
      width: 50%;
@@ -547,7 +531,7 @@ button:hover {
 }
 
 /* Add padding to container elements */
-.container {
+.containers {
   padding: 16px;
 }
 
